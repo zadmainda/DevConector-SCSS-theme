@@ -2,13 +2,13 @@
 @import 'utilities';
 @import 'form';
 
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body{
+body {
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
@@ -16,21 +16,21 @@ body{
   color: #333;
 }
 
-a{
+a {
   text-decoration: none;
   color: $primary-color;
 }
 
-ul{
+ul {
   list-style: none;
 }
 
-img{
+img {
   width: 100%;
 }
 
 //Navbar
-.navbar{
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,16 +42,16 @@ img{
   border-bottom: solid 1px $primary-color;
   opacity: 0.9;
 
-  ul{
+  ul {
     display: flex;
   }
 
-  a{
+  a {
     color: #fff;
     padding: 0.45rem;
     margin: 0 0.25rem;
 
-    &:hover{
+    &:hover {
       color: $primary-color;
     }
   }
@@ -61,7 +61,7 @@ img{
 
 // Landing
 
-.landing{
+.landing {
   position: relative;
   background: url(../img/3.jpg);
   background-repeat: no-repeat;
@@ -69,7 +69,7 @@ img{
   background-size: cover;
   height: 100vh;
 
-  &-inner{
+  &-inner {
     color: white;
     height: 100%;
     display: flex;
@@ -81,4 +81,64 @@ img{
     text-align: center;
   }
 
+}
+
+.profile {
+  display: grid;
+  // grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 2fr 4fr 2fr;
+  align-items: center;
+  gap: 2rem;
+
+  padding: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-areas:
+    'top top'
+    'about about'
+    'exp edu'
+    'github github';
+  grid-gap: 1rem;
+
+  .profile-top {
+    grid-area: top;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    img{
+      width: 250px;
+    }
+    .icons a{
+       color: white; 
+       margin: 0 0.3rem;
+
+      &:hover{
+        color: $dark-color;
+      }
+    }
+
+  }
+
+  .profile-about {
+    grid-area: about;
+  }
+
+  .profile-exp {
+    grid-area: exp;
+  }
+
+  .profile-edu {
+    grid-area: edu;
+  }
+
+  .profile-github {
+    grid-area: github;
+  }
 }
